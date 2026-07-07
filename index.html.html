@@ -1,0 +1,196 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
+
+.pf-root { font-family: 'Inter', var(--font-sans); max-width: 700px; margin: 0 auto; }
+.pf-hero { padding: 3rem 0 2rem; border-bottom: 0.5px solid var(--border); }
+.pf-display { font-family: 'Space Grotesk', var(--font-sans); }
+.pf-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+.pf-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--fill-accent); border-radius: 1px; }
+.pf-headline { font-family: 'Space Grotesk', var(--font-sans); font-size: 38px; font-weight: 700; line-height: 1.15; color: var(--text-primary); margin: 0 0 1rem; letter-spacing: -0.02em; }
+.pf-headline em { font-style: normal; color: var(--text-accent); }
+.pf-sub { font-size: 15px; line-height: 1.7; color: var(--text-secondary); max-width: 520px; margin: 0 0 1.5rem; }
+.pf-cta-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pf-btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Space Grotesk', var(--font-sans); font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: var(--radius); border: 0.5px solid var(--border-strong); background: var(--surface-2); color: var(--text-primary); cursor: pointer; text-decoration: none; }
+.pf-btn-primary { background: var(--fill-accent); border-color: var(--fill-accent); color: var(--on-accent); }
+.pf-contact { font-size: 13px; color: var(--text-muted); }
+.pf-contact a { color: var(--text-accent); text-decoration: none; }
+
+.pf-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; margin: 2rem 0; }
+.pf-stat { background: var(--surface-1); padding: 1.25rem 1rem; text-align: center; }
+.pf-stat-n { font-family: 'Space Grotesk', var(--font-sans); font-size: 26px; font-weight: 700; color: var(--text-primary); line-height: 1; margin-bottom: 4px; }
+.pf-stat-l { font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; }
+
+.pf-section { padding: 2rem 0; border-bottom: 0.5px solid var(--border); }
+.pf-section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem; }
+.pf-section-title { font-family: 'Space Grotesk', var(--font-sans); font-size: 20px; font-weight: 600; color: var(--text-primary); margin: 0 0 0.4rem; }
+
+.pf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.pf-card { background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.1rem; position: relative; overflow: hidden; }
+.pf-card-tag { font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 100px; margin-bottom: 0.8rem; display: inline-block; }
+.pf-card-tag.n8n { background: var(--bg-accent); color: var(--text-accent); }
+.pf-card-tag.ai { background: var(--bg-pro); color: var(--text-pro); }
+.pf-card-tag.data { background: var(--bg-success); color: var(--text-success); }
+.pf-card-title { font-family: 'Space Grotesk', var(--font-sans); font-size: 14px; font-weight: 600; color: var(--text-primary); margin: 0 0 5px; }
+.pf-card-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.55; margin: 0 0 0.8rem; }
+.pf-card-tools { display: flex; gap: 6px; flex-wrap: wrap; }
+.pf-tool { font-size: 11px; color: var(--text-muted); background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 4px; padding: 2px 6px; }
+.pf-card-node { position: absolute; top: -10px; right: -10px; width: 50px; height: 50px; border-radius: 50%; opacity: 0.06; }
+.pf-card-node.accent { background: var(--fill-accent); }
+.pf-card-node.pro { background: var(--fill-pro); }
+.pf-card-node.success { background: var(--fill-success); }
+
+.pf-services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.pf-service { display: flex; align-items: flex-start; gap: 12px; padding: 0.9rem 1rem; background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 12px; }
+.pf-service-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--bg-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pf-service-icon i { font-size: 16px; color: var(--text-accent); }
+.pf-service-name { font-size: 13px; font-weight: 500; color: var(--text-primary); margin: 0 0 2px; }
+.pf-service-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin: 0; }
+
+.pf-stack { display: flex; flex-wrap: wrap; gap: 8px; }
+.pf-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: var(--text-secondary); background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 6px; padding: 5px 10px; }
+.pf-chip i { font-size: 14px; color: var(--text-muted); }
+
+.pf-footer { padding: 1.5rem 0 0.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.pf-footer-name { font-family: 'Space Grotesk', var(--font-sans); font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.pf-footer-links { display: flex; gap: 16px; }
+.pf-footer-links a { font-size: 12px; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 4px; }
+.pf-footer-links i { font-size: 13px; }
+.pf-divider { width: 100%; height: 0.5px; background: var(--border); margin: 1.5rem 0 0; }
+
+.pf-add-btn { border: none; cursor: pointer; font-size: 12px; font-family: inherit; }
+.pf-add-btn:hover { opacity: 0.75; }
+</style>
+
+<div class="pf-root" role="main">
+  <h2 class="sr-only">AI Automation Portfolio — one-page template</h2>
+
+  <header class="pf-hero">
+    <div class="pf-eyebrow">Available for projects</div>
+    <h1 class="pf-headline">I build workflows that<br>make businesses run <em>faster.</em></h1>
+    <p class="pf-sub">AI automation specialist focused on n8n, LLM-powered agents, and end-to-end process automation for e-commerce, operations, and client services.</p>
+    <div class="pf-cta-row">
+      <a href="#" class="pf-btn pf-btn-primary"><i class="ti ti-mail" aria-hidden="true"></i> Get in touch</a>
+      <a href="#" class="pf-btn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn</a>
+      <span class="pf-contact">or email <a href="mailto:you@email.com">you@email.com</a></span>
+    </div>
+  </header>
+
+  <div class="pf-stats">
+    <div class="pf-stat">
+      <div class="pf-stat-n">12+</div>
+      <div class="pf-stat-l">Automations built</div>
+    </div>
+    <div class="pf-stat">
+      <div class="pf-stat-n">4</div>
+      <div class="pf-stat-l">Client industries</div>
+    </div>
+    <div class="pf-stat">
+      <div class="pf-stat-n">~80%</div>
+      <div class="pf-stat-l">Avg. time saved per task</div>
+    </div>
+  </div>
+
+  <section class="pf-section">
+    <p class="pf-section-label">Selected work</p>
+    <div class="pf-grid">
+
+      <div class="pf-card">
+        <div class="pf-card-node accent"></div>
+        <span class="pf-card-tag n8n">n8n</span>
+        <h3 class="pf-card-title">AI customer support triage</h3>
+        <p class="pf-card-desc">Routes inbound emails to WISMO, refund, FAQ, or escalation paths using GPT classification — drafts replies without auto-sending.</p>
+        <div class="pf-card-tools">
+          <span class="pf-tool">Gmail</span>
+          <span class="pf-tool">OpenAI</span>
+          <span class="pf-tool">Shopify</span>
+        </div>
+      </div>
+
+      <div class="pf-card">
+        <div class="pf-card-node pro"></div>
+        <span class="pf-card-tag ai">AI agent</span>
+        <h3 class="pf-card-title">Social media content scheduler</h3>
+        <p class="pf-card-desc">Generates, formats, and queues posts across platforms on a rolling content calendar with approval gates.</p>
+        <div class="pf-card-tools">
+          <span class="pf-tool">n8n</span>
+          <span class="pf-tool">OpenAI</span>
+          <span class="pf-tool">Airtable</span>
+        </div>
+      </div>
+
+      <div class="pf-card">
+        <div class="pf-card-node success"></div>
+        <span class="pf-card-tag data">Data</span>
+        <h3 class="pf-card-title">Add your workflow here</h3>
+        <p class="pf-card-desc">Brief description of what it does, the business problem it solves, and the outcome it delivers.</p>
+        <div class="pf-card-tools">
+          <span class="pf-tool">Tool 1</span>
+          <span class="pf-tool">Tool 2</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="margin-top: 10px; text-align: right;">
+      <button class="pf-btn pf-add-btn" onclick="sendPrompt('Help me add another workflow card to my portfolio. The workflow is: ')">+ Add a workflow ↗</button>
+    </div>
+  </section>
+
+  <section class="pf-section">
+    <p class="pf-section-label">What I do</p>
+    <div class="pf-services">
+      <div class="pf-service">
+        <div class="pf-service-icon"><i class="ti ti-circuit-switching" aria-hidden="true"></i></div>
+        <div>
+          <p class="pf-service-name">Workflow automation</p>
+          <p class="pf-service-desc">End-to-end n8n flows that replace manual, repetitive ops work.</p>
+        </div>
+      </div>
+      <div class="pf-service">
+        <div class="pf-service-icon"><i class="ti ti-robot" aria-hidden="true"></i></div>
+        <div>
+          <p class="pf-service-name">AI agent design</p>
+          <p class="pf-service-desc">LLM-powered agents with memory, routing logic, and safe output handling.</p>
+        </div>
+      </div>
+      <div class="pf-service">
+        <div class="pf-service-icon"><i class="ti ti-plug-connected" aria-hidden="true"></i></div>
+        <div>
+          <p class="pf-service-name">Systems integration</p>
+          <p class="pf-service-desc">Connecting CRMs, e-commerce platforms, email, and data stores via API.</p>
+        </div>
+      </div>
+      <div class="pf-service">
+        <div class="pf-service-icon"><i class="ti ti-chart-arrows" aria-hidden="true"></i></div>
+        <div>
+          <p class="pf-service-name">Process consulting</p>
+          <p class="pf-service-desc">Auditing ops to find where automation gives the fastest ROI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pf-section">
+    <p class="pf-section-label">Tech stack</p>
+    <div class="pf-stack">
+      <span class="pf-chip"><i class="ti ti-topology-star" aria-hidden="true"></i> n8n</span>
+      <span class="pf-chip"><i class="ti ti-brain" aria-hidden="true"></i> OpenAI / Claude</span>
+      <span class="pf-chip"><i class="ti ti-brand-google" aria-hidden="true"></i> Google Workspace</span>
+      <span class="pf-chip"><i class="ti ti-shopping-cart" aria-hidden="true"></i> Shopify</span>
+      <span class="pf-chip"><i class="ti ti-mail" aria-hidden="true"></i> Gmail / Outlook</span>
+      <span class="pf-chip"><i class="ti ti-brand-meta" aria-hidden="true"></i> Meta APIs</span>
+      <span class="pf-chip"><i class="ti ti-database" aria-hidden="true"></i> Airtable / Notion</span>
+      <span class="pf-chip"><i class="ti ti-api" aria-hidden="true"></i> REST / Webhooks</span>
+    </div>
+  </section>
+
+  <footer class="pf-footer">
+    <div class="pf-footer-name">Your Name · AI Automation</div>
+    <div class="pf-footer-links">
+      <a href="#"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+      <a href="#"><i class="ti ti-brand-github"></i> GitHub</a>
+      <a href="#"><i class="ti ti-external-link"></i> Website</a>
+    </div>
+  </footer>
+  <div class="pf-divider"></div>
+</div>
